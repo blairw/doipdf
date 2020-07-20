@@ -3,8 +3,8 @@ from flask import Flask, send_file, redirect, url_for, send_from_directory
 
 app = Flask(__name__)
 
-@app.route('/doi/', defaults={'path': ''})
-@app.route('/doi/<path:path>')
+@app.route('/doipdf/', defaults={'path': ''})
+@app.route('/doipdf/<path:path>')
 def catch_all(path):
     try:
         pdf_filename = get_pdf_from_doi(path) + '.pdf'

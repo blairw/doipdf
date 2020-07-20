@@ -5,7 +5,7 @@
 A simple DOI to PDF resolver for your personal use, written in Python. So you can, for example, go to ...
 
 ```bash
-http://localhost:5000/doi/10.1177/2053168016653424
+http://localhost:5000/doipdf/10.1177/2053168016653424
 ```
 
 ... and immediately see the PDF file of the article, assuming you have:
@@ -16,7 +16,7 @@ http://localhost:5000/doi/10.1177/2053168016653424
 4. Registered said PDF in said mySQL table, and
 5. Configured mySQL connection in `secrets.txt`.
 
-This is for your personal use because you will need to collect PDf files during your research and save them into `doi_resolver_files`. The only benefit over dx.doi.org is that you will have your files with you on the go (e.g. working without an internet connection).
+This is for your personal use because you will need to collect PDF files during your research and save them into `doi_resolver_files`. The only benefit over dx.doi.org is that you will have your files with you on the go (e.g. working without an internet connection).
 
 ## secrets.txt expected format
 
