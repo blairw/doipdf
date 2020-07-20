@@ -1,0 +1,6 @@
+secrets.txt
+doi_resolver_files/
+__pycache__/
+.venv
+.vscode
+.DS_Store
