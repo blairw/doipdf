@@ -24,7 +24,7 @@ This is for your personal use because you will need to collect PDF files during 
 host = localhost
 user = blair
 password = secretpassword
-database = doitopdfresolver
+database = doipdf
 ```
 
 ## Running the server real quick
