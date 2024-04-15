@@ -1,4 +1,5 @@
-secrets.txt
+secrets_sqlmode.txt
+secrets_csvmode.txt
 doi_resolver_files/
 __pycache__/
 .venv

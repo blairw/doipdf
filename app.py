@@ -1,4 +1,5 @@
-from doi_lookup import get_pdf_from_doi
+# from doi_lookup_sql import get_pdf_from_doi
+from doi_lookup_csv import get_pdf_from_doi
 from flask import Flask, send_file, redirect, url_for, send_from_directory
 
 app = Flask(__name__)
@@ -7,19 +8,19 @@ app = Flask(__name__)
 @app.route('/doipdf/<path:path>')
 def catch_all(path):
     try:
-        pdf_filename = get_pdf_from_doi(path) + '.pdf'
+        pdf_details = get_pdf_from_doi(path)
     except:
         return 'DOI not found: %s' % path
     else:
-        response = send_from_directory(directory='doi_resolver_files',
-                        filename=pdf_filename,
-                        mimetype='application/pdf',
-                        attachment_filename=pdf_filename)
+        response = send_from_directory(directory = pdf_details["folder"],
+                        path = pdf_details["filepath"],
+                        mimetype = 'application/pdf',
+                        as_attachment = True)
         # https://stackoverflow.com/questions/41543951/how-to-change-downloading-name-in-flask
         # https://stackoverflow.com/questions/38564525/chrome-embedded-pdf-download-filename
-        response.headers["x-filename"] = pdf_filename
-        response.headers["x-suggested-filename"] = pdf_filename
-        response.headers["Content-Disposition"] = 'inline; filename="' + pdf_filename + '"'
+        response.headers["x-filename"] = pdf_details["filepath"]
+        response.headers["x-suggested-filename"] = pdf_details["filepath"]
+        response.headers["Content-Disposition"] = 'inline; filename="' + pdf_details["filepath"] + '"'
         response.headers["Access-Control-Expose-Headers"] = 'x-filename'
         response.headers["Access-Control-Expose-Headers"] = 'x-suggested-filename'
         return response

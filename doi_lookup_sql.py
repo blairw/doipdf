@@ -1,8 +1,8 @@
 import mysql.connector
 
-# https://stackoverflow.com/questions/9161439/parse-key-value-pairs-in-a-text-file
+# Adapted from https://stackoverflow.com/questions/9161439/parse-key-value-pairs-in-a-text-file
 secrets = {}
-with open("secrets.txt") as myfile:
+with open("secrets_sqlmode.txt") as myfile:
     for line in myfile:
         key, value = line.partition("=")[::2]
         secrets[key.strip()] = value.strip()
