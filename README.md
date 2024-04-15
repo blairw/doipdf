@@ -26,7 +26,7 @@ Assuming you have:
 
 1. Downloaded the PDF, and
 2. Placed it in a folder somewhere, and
-3. Set up a CSV file with fields `doi` and `pdf`, and
+3. Set up a CSV file with fields `doi` and `path_to_file` and `filename`, and
 4. Registered said PDF in said mySQL table, and
 5. Configured mySQL connection in `secrets_csvmode.txt`.
 
