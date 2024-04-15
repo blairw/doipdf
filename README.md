@@ -5,7 +5,7 @@
 A simple DOI to PDF resolver for your personal use, written in Python. So you can, for example, go to ...
 
 ```bash
-http://localhost:5000/doipdf/10.1111/isj.12343
+http://localhost:5001/10.1111/isj.12343
 ```
 
 ... and immediately see the PDF file of the article, assuming you have completed the appropriate setup:
@@ -54,7 +54,7 @@ database = doipdf
 ## Running the server real quick
 
 ```bash
-python3 -m flask run -h localhost -p 5001
+python3 -m flask run -h 0.0.0.0 -p 5001
 ```
 
 ## Virtualenv (venv) configuration
